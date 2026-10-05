@@ -23,10 +23,10 @@ const KAISER_CONFIG = {
 
   // Default Featured Long-Form Video (Auto-updated by RSS, fallback if offline)
   featuredVideo: {
-    title: "Corax Is Finished... Why You Don't Need Rivals Cheats Anymore",
-    videoId: "OUNl81bv4f0",
-    url: "https://www.youtube.com/watch?v=OUNl81bv4f0",
-    thumbnail: "https://i4.ytimg.com/vi/OUNl81bv4f0/maxresdefault.jpg"
+    title: "I beg you, fix your Rivals mobile FPS like this",
+    videoId: "tLureNE4Cbs",
+    url: "https://www.youtube.com/watch?v=tLureNE4Cbs",
+    thumbnail: "https://i4.ytimg.com/vi/tLureNE4Cbs/hqdefault.jpg"
   },
 
   // Download Artifacts
