@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>KaiserFPS iOS - Mobile Performance Suite for Roblox</title>
+  <meta name="description" content="Ultimate FPS optimization companion for Roblox on iPhone and iPad. Hardware RAM flush, Guided Access priority, Metal tuning, and Kaiser Everhart YouTube updates.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="KaiserFPS">
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png">
+  <link rel="icon" type="image/png" href="./icon.png">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body data-theme="blue">
+
+  <div class="app-wrapper">
+
+    <!-- Top Header -->
+    <header class="header">
+      <div class="brand">
+        <img src="./icon.png" alt="KaiserFPS Logo" class="brand-logo" id="brandLogo">
+        <div class="brand-text">
+          <h1>KaiserFPS</h1>
+          <p>Roblox iOS Optimizer Suite</p>
+        </div>
+      </div>
+      <div class="ios-badge" id="btnIosGuide">
+        <span> iOS Metal</span>
+        <span>ⓘ</span>
+      </div>
+    </header>
+
+    <!-- Diagnostics Banner -->
+    <div class="glass-card diagnostics-strip">
+      <div class="diag-item">
+        <span class="diag-label">Pacing</span>
+        <span class="diag-value" id="diagPacing">60 Hz</span>
+      </div>
+      <div class="diag-divider"></div>
+      <div class="diag-item">
+        <span class="diag-label">Metal GPU</span>
+        <span class="diag-value" id="diagGpu">Apple A17</span>
+      </div>
+      <div class="diag-divider"></div>
+      <div class="diag-item">
+        <span class="diag-label">RAM Pool</span>
+        <span class="diag-value" id="diagRam">Purged 100%</span>
+      </div>
+    </div>
+
+    <!-- Kid & Beginner Friendly Quick Tip Banner -->
+    <div class="glass-card kid-guide-banner" id="bannerQuickStart">
+      <div class="kid-guide-icon">🎮</div>
+      <div class="kid-guide-text">
+        <h4>NEW TO THIS? TAP 🟢 LOW &amp; HIT THE CIRCLE!</h4>
+        <p>Zero-setup instant boost works on ANY iPhone or iPad. Just tap the big circle to play Roblox!</p>
+      </div>
+    </div>
+
+    <!-- Hero Optimizer Circular Button -->
+    <div class="hero-circle-container" id="circleContainer">
+      <div class="glow-radar-ring" id="glowRing"></div>
+      <div class="master-toggle-btn" id="btnMasterToggle" role="button" tabindex="0">
+        <span class="bolt-icon" id="boltIcon">⚡</span>
+        <span class="status-main" id="statusMain">INACTIVE</span>
+        <span class="status-sub" id="statusSub">TAP CIRCLE TO ACTIVATE</span>
+      </div>
+    </div>
+
+    <!-- Preset Selector -->
+    <div class="presets-section">
+      <div class="preset-buttons">
+        <button class="preset-btn" id="presetLow" data-preset="low">🟢 LOW (Instant)</button>
+        <button class="preset-btn active" id="presetMed" data-preset="medium">⚡ MEDIUM</button>
+        <button class="preset-btn" id="presetHigh" data-preset="high">🔥 HIGH (Max)</button>
+      </div>
+      <p class="preset-description" id="presetDesc">
+        ⚡ Medium Mode: Guided Access priority lock + Metal shader pre-caching + 60Hz ProMotion frame stabilizer.
+      </p>
+    </div>
+
+    <!-- Creator YouTube Alert Widget -->
+    <div class="glass-card creator-widget">
+      <div class="creator-header">
+        <div class="creator-info">
+          <img src="./icon.png" alt="Kaiser Avatar" class="creator-avatar">
+          <div class="creator-title-group">
+            <h3>Kaiser Everhart Videos</h3>
+            <p id="creatorStatusText">New upload notifications: ON</p>
+          </div>
+        </div>
+        <label class="switch">
+          <input type="checkbox" id="toggleCreatorAlerts" checked>
+          <span class="slider"></span>
+        </label>
+      </div>
+
+      <!-- Live Long-Form Video Card -->
+      <a href="https://www.youtube.com/watch?v=OUNl81bv4f0" target="_blank" rel="noopener noreferrer" class="video-preview-card" id="latestVideoCard">
+        <img src="https://i4.ytimg.com/vi/OUNl81bv4f0/hqdefault.jpg" alt="Latest Long-Form Video" class="video-thumb" id="videoThumb">
+        <div class="video-meta">
+          <div class="video-title" id="videoTitle">Corax Is Finished... Why You Don't Need Rivals Cheats Anymore</div>
+          <div class="video-badge">▶ Watch Video (Full Gameplay)</div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Quick Action Buttons -->
+    <div class="actions-grid">
+      <button class="action-btn primary" id="btnLaunchRoblox">
+        <span>▶</span> Launch Roblox
+      </button>
+      <button class="action-btn" id="btnOpenGuide">
+        <span>📖</span> iOS Optimizer Guide
+      </button>
+      <button class="action-btn" id="btnPurgeRam">
+        <span>🧹</span> Flush iOS RAM
+      </button>
+      <button class="action-btn" id="btnTestAlert">
+        <span>🔔</span> Test Creator Alert
+      </button>
+    </div>
+
+    <!-- Color Theme Selector -->
+    <div class="glass-card theme-picker-bar">
+      <span style="font-size: 11px; font-weight: 600; color: var(--text-secondary);">ACCENT THEME</span>
+      <div class="theme-dots">
+        <div class="theme-dot pink" data-color="pink" title="Pink"></div>
+        <div class="theme-dot blue active" data-color="blue" title="Blue"></div>
+        <div class="theme-dot green" data-color="green" title="Green"></div>
+        <div class="theme-dot red" data-color="red" title="Red"></div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- iOS Step-by-Step Optimization Guide Modal -->
+  <div class="modal-overlay" id="guideModal">
+    <div class="modal-sheet">
+      <div class="sheet-handle"></div>
+      <div class="modal-header">
+        <h2> Complete iOS Roblox Guide</h2>
+        <button class="close-btn" id="btnCloseGuide">✕</button>
+      </div>
+
+      <div class="guide-step">
+        <h4>1. The Secret iOS Weapon: Guided Access</h4>
+        <p>Apple devices throttle games when background notifications or swipe gestures trigger. <strong>Guided Access gives Roblox 100% uninterrupted CPU/GPU core priority!</strong></p>
+        <p style="margin-top: 6px;">👉 Open <strong>Settings &gt; Accessibility &gt; Guided Access</strong> &gt; Turn it <strong>ON</strong>. Inside Roblox, <strong>triple-click the Power button</strong> to start!</p>
+      </div>
+
+      <div class="guide-step">
+        <h4>2. Hardware RAM Flush (Free 2GB+ Memory)</h4>
+        <p>iOS keeps heavy apps frozen in RAM. To instantly purge all inactive memory before gaming:</p>
+        <p style="margin-top: 6px;">👉 Hold <strong>Volume Up + Power</strong> until the slider appears. Then hold the <strong>AssistiveTouch Home button</strong> for 5 seconds until the screen flashes. Your RAM is now completely refreshed!</p>
+      </div>
+
+      <div class="guide-step">
+        <h4>3. Turn OFF Low Power Mode</h4>
+        <p>Low Power Mode cuts Apple A-series and M-series GPU clock frequencies by <strong>50%</strong> and locks Roblox to a stuttering 30 FPS. Keep Low Power Mode <strong>OFF</strong> while gaming.</p>
+      </div>
+
+      <div class="guide-step">
+        <h4>4. Roblox Metal FFlags &amp; ClientAppSettings</h4>
+        <p>iOS Roblox runs on Apple's Metal API. You can optimize rendering via Chevstrap/Voidstrap configuration files:</p>
+        <p style="margin-top: 6px;"><code>DFIntTaskSchedulerTargetFps: 60</code></p>
+        <p style="margin-top: 4px;"><code>FFlagDebugGraphicsPreferMetal: True</code></p>
+      </div>
+
+      <div class="guide-step">
+        <h4>5. In-Game Roblox Settings</h4>
+        <p>In Roblox Settings menu: Switch <strong>Graphics Mode</strong> from Automatic to <strong>Manual</strong> and set slider between 2–4 bars for smooth 60 FPS in PvP titles (Rivals, Bedwars, Arsenal).</p>
+      </div>
+
+      <button class="action-btn primary" style="width: 100%; margin-top: 10px;" id="btnCloseGuideBottom">Got it! Let's Play</button>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>

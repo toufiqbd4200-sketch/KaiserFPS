@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <title>KaiserFPS — Ultimate Mobile Performance Suite for Roblox (Android & iOS)</title>
+  
+  <meta name="description" content="Safe, transparent mobile optimizer for Roblox players on Android (9-16) and iOS. Boost frame rates, eliminate micro-stutters, and play Roblox Rivals at smooth 60 FPS without bans or root.">
+  <meta name="keywords" content="Roblox mobile optimizer, KaiserFPS, Roblox Rivals FPS boost, Shizuku Roblox, Android 16 FPS, iOS Guided Access Roblox, Roblox lag fix">
+  <meta name="author" content="Kaiser Everhart">
+
+  <!-- OpenGraph / Social Sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KaiserFPS — Mobile Roblox Performance Suite">
+  <meta property="og:description" content="Boost frame rates, slash GPU fillrate by 36%, and stop 200ms ping spikes. 100% Safe, No Bans, Android 9-16 & iOS.">
+  <meta property="og:image" content="./assets/logo.png">
+
+  <!-- Favicon & Icons -->
+  <link rel="icon" type="image/png" href="./assets/logo.png">
+  <link rel="apple-touch-icon" href="./assets/logo.png">
+
+  <!-- Google Fonts: Outfit, Plus Jakarta Sans, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body class="space-theme">
+
+  <!-- Interactive Cosmic Canvas Starfield -->
+  <canvas id="space-canvas"></canvas>
+
+  <!-- Ambient Space Video Loop (Muted, Lightweight) -->
+  <div class="space-video-container" aria-hidden="true">
+    <video autoplay muted loop playsinline class="space-video-bg" id="spaceVideo">
+      <source src="./assets/space-loop.mp4" type="video/mp4">
+    </video>
+    <div class="space-nebula-overlay"></div>
+  </div>
+
+  <!-- Header / Nav -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#" class="brand-group">
+        <div class="logo-wrapper">
+          <img src="./assets/logo.png" alt="KaiserFPS Chibi Logo" class="brand-logo">
+          <div class="logo-halo"></div>
+        </div>
+        <div class="brand-titles">
+          <span class="brand-name">KaiserFPS<span class="brand-badge">MOBILE</span></span>
+          <span class="brand-sub">Roblox Performance Suite</span>
+        </div>
+      </a>
+
+      <nav class="nav-links">
+        <a href="#how-it-works" class="nav-link">How It Works</a>
+        <a href="#modes" class="nav-link">Kid Guide</a>
+        <a href="#ios-guide" class="nav-link ios-nav-highlight"> iOS Setup</a>
+        <a href="#letter" class="nav-link">Letter from Kaiser</a>
+        <a href="#faq" class="nav-link">Safety FAQ</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://www.youtube.com/@KaiserEverhart-Adaptation?sub_confirmation=1" target="_blank" rel="noopener noreferrer" class="btn-sub-nav">
+          <svg class="yt-icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+          <span>Subscribe</span>
+        </a>
+        <a href="#download-gate" class="btn-nav-primary">Get App</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <div class="hero-container">
+      
+      <!-- Top Announcement Pill -->
+      <div class="hero-pill-badge">
+        <span class="pulsing-dot"></span>
+        <span class="pill-text">OFFICIAL v3.0 RELEASE • ANDROID 9–16 &amp; iOS SUITE</span>
+      </div>
+
+      <!-- Main Heading -->
+      <h1 class="hero-title">
+        Buttery Smooth Roblox.<br>
+        <span class="cosmic-text-gradient">Zero Stutter. Zero Fear.</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Mobile phones were built for social media, not intense 3D Roblox gaming. KaiserFPS fixes that by tuning your phone's graphics fillrate, compiling bytecode ahead of time, and locking Wi-Fi latency — <strong>100% safe, no root, and no bans.</strong>
+      </p>
+
+      <!-- Mascot Card & Direct Speech Bubble -->
+      <div class="mascot-hero-card">
+        <div class="mascot-avatar-container">
+          <img src="./assets/logo.png" alt="Kaiser Mascot Doodle" class="mascot-avatar-img">
+          <div class="mascot-orbit-ring"></div>
+        </div>
+        <div class="mascot-speech-bubble">
+          <div class="bubble-header">
+            <span class="bubble-tag">KAISER SAYS:</span>
+            <span class="bubble-meta">To My Mobile Viewers</span>
+          </div>
+          <p class="bubble-message">
+            "I spent weeks building this so you don't have to suffer through 15 FPS in <em>Roblox Rivals</em> or <em>Bedwars</em>. No spyware, no fake promises. Just pure performance that respects you."
+          </p>
+        </div>
+      </div>
+
+      <!-- Hero Call-To-Actions -->
+      <div class="hero-cta-group">
+        <a href="#download-gate" class="btn-cosmic-primary" id="btnHeroUnlock">
+          <span class="btn-shine"></span>
+          <span class="btn-text">🚀 Unlock Free Download</span>
+        </a>
+        <a href="#ios-guide" class="btn-cosmic-secondary" id="btnHeroIosGuide">
+          <span class="apple-icon"></span>
+          <span class="btn-text">iPhone / iPad Guide</span>
+        </a>
+      </div>
+
+      <!-- Live Telemetry Spec Bar -->
+      <div class="telemetry-bar">
+        <div class="telem-item">
+          <span class="telem-val">Android 9–16</span>
+          <span class="telem-lbl">Universal Support</span>
+        </div>
+        <div class="telem-sep"></div>
+        <div class="telem-item">
+          <span class="telem-val">36.0% Less Load</span>
+          <span class="telem-lbl">GPU Fillrate Optimization</span>
+        </div>
+        <div class="telem-sep"></div>
+        <div class="telem-item">
+          <span class="telem-val">0ms Stutter</span>
+          <span class="telem-lbl">AOT Native Compilation</span>
+        </div>
+        <div class="telem-sep"></div>
+        <div class="telem-item">
+          <span class="telem-val">100% Hyperion Safe</span>
+          <span class="telem-lbl">Zero Ban Risk</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Letter From Kaiser Section -->
+  <section class="letter-section" id="letter">
+    <div class="section-container">
+      <div class="letter-card glass-panel">
+        <div class="letter-header">
+          <div class="letter-badge">💬 A DIRECT LETTER FROM KAISER</div>
+          <h2>Why You Can Trust This Software With Your Eyes Closed</h2>
+        </div>
+        <div class="letter-body">
+          <p>
+            Hey everyone, Kaiser here. In mobile gaming communities, it's so common for people to get tricked into downloading shady "boosters" filled with ads, hidden cryptominers, or malware that doesn't do anything. Worse, when people see advanced terms like Shizuku or developer options, rumors start spreading that it's a "RAT" or "virus."
+          </p>
+          <p>
+            <strong>I want to look you straight in the eye:</strong> I value your trust more than anything. KaiserFPS was engineered with <strong>complete transparency</strong>.
+          </p>
+          <div class="trust-grid">
+            <div class="trust-box">
+              <div class="trust-icon">🛡️</div>
+              <h4>Zero Cheats or Hacks</h4>
+              <p>KaiserFPS does not inject DLLs, scripts, or hooks into the Roblox client. It doesn't modify game memory or give unfair advantages. You cannot get banned by Hyperion.</p>
+            </div>
+            <div class="trust-box">
+              <div class="trust-icon">🔓</div>
+              <h4>No Root or PC Required</h4>
+              <p>You never have to void your phone's warranty or plug into a computer. LOW mode works out of the box, and Turbo modes use standard Android Wireless Debugging.</p>
+            </div>
+            <div class="trust-box">
+              <div class="trust-icon">🔄</div>
+              <h4>1-Tap Instant Rollback</h4>
+              <p>Tapping "Restore Defaults" in settings instantly returns your screen resolution, refresh rate, and battery configs back to 100% factory state.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works Section -->
+  <section class="how-section" id="how-it-works">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">ENGINEERING SECRETS</span>
+        <h2>How KaiserFPS Squeezes 60+ FPS Out of Your Phone</h2>
+        <p class="section-desc">Here is the exact science behind what happens when you press the activation circle.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Feature 1 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-badge cyan-glow">📐</div>
+          <div class="feature-content">
+            <span class="feature-stat">36% GPU Workload Reduction</span>
+            <h3>80% Dynamic Display Scaling</h3>
+            <p>
+              A 1080p mobile screen renders <strong>2.59 million pixels</strong> every frame. On a small 6-inch screen, your eyes can't tell the difference between 1080p and 864p. By downscaling to 80%, your GPU renders <strong>60 million fewer pixels every single second</strong>, stopping heat throttling in its tracks!
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-badge purple-glow">⚡</div>
+          <div class="feature-content">
+            <span class="feature-stat">0ms Micro-Stutter</span>
+            <h3>AOT Bytecode Pre-Compilation</h3>
+            <p>
+              Normally, Android compiles Roblox code <em>while</em> you fight, causing 16ms to 45ms hiccups when someone shoots or spawns assets. KaiserFPS forces Android's <code>dex2oat</code> compiler to compile all Roblox code into native ARM64 machine instructions ahead of time!
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-badge gold-glow">📶</div>
+          <div class="feature-content">
+            <span class="feature-stat">Zero 200ms Ping Spikes</span>
+            <h3>Wi-Fi Low-Latency Sleep Lock</h3>
+            <p>
+              Android phones quietly scan for background Wi-Fi networks every few minutes, causing sudden lag spikes right in the middle of a 1v1 duel. KaiserFPS enforces high-performance sleep policy and locks latency for competitive play.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="feature-card glass-panel">
+          <div class="feature-icon-badge green-glow">🧹</div>
+          <div class="feature-content">
+            <span class="feature-stat">Free 1.5GB to 2.5GB RAM</span>
+            <h3>System Memory &amp; Cache Purge</h3>
+            <p>
+              Background apps like TikTok, Instagram, and Chrome tabs silently hog system RAM. KaiserFPS flushes obsolete page caches and restricts zombie background tasks so Roblox has 100% of your RAM.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Kid & Beginner Friendly Mode Guide -->
+  <section class="modes-section" id="modes">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">KID &amp; BEGINNER FRIENDLY</span>
+        <h2>Choose Your Mode in 5 Seconds</h2>
+        <p class="section-desc">You don't need to be a computer genius. Pick the mode that fits your style.</p>
+      </div>
+
+      <div class="modes-grid">
+        <!-- Low Mode -->
+        <div class="mode-card glass-panel recommended-mode">
+          <div class="mode-badge green-badge">RECOMMENDED FOR BEGINNERS</div>
+          <div class="mode-header">
+            <span class="mode-emoji">🟢</span>
+            <h3>LOW (Instant Mode)</h3>
+            <span class="mode-setup">0 SECONDS SETUP • ZERO SHIZUKU</span>
+          </div>
+          <p class="mode-summary">
+            Works right out of the box on <strong>ANY Android phone</strong>. Just open the app, tap LOW, and press the big circle.
+          </p>
+          <ul class="mode-features">
+            <li>✓ Flushes background RAM &amp; zombie processes</li>
+            <li>✓ Compresses active system caches</li>
+            <li>✓ Safe on every Android brand (Samsung, Xiaomi, Pixel)</li>
+            <li>✓ <strong>No Shizuku, no PC, no developer options required!</strong></li>
+          </ul>
+        </div>
+
+        <!-- Medium Mode -->
+        <div class="mode-card glass-panel">
+          <div class="mode-badge blue-badge">TURBOCHARGED</div>
+          <div class="mode-header">
+            <span class="mode-emoji">⚡</span>
+            <h3>MEDIUM (Turbo Mode)</h3>
+            <span class="mode-setup">2-MINUTE ONE-TIME SHIZUKU</span>
+          </div>
+          <p class="mode-summary">
+            For players who want competitive frame pacing and zero micro-stutters during intense PvP fights.
+          </p>
+          <ul class="mode-features">
+            <li>✓ AOT Bytecode pre-compilation (0ms stutter)</li>
+            <li>✓ Battery Doze whitelist (Roblox never throttles)</li>
+            <li>✓ Wi-Fi Low-Latency Sleep Policy lock</li>
+            <li>✓ Smooth 60 FPS pacing stabilizer</li>
+          </ul>
+        </div>
+
+        <!-- High Mode -->
+        <div class="mode-card glass-panel">
+          <div class="mode-badge purple-badge">MAX FPS FOR BUDGET PHONES</div>
+          <div class="mode-header">
+            <span class="mode-emoji">🔥</span>
+            <h3>HIGH (Max FPS Mode)</h3>
+            <span class="mode-setup">BEST FOR OLDER / LAGGING PHONES</span>
+          </div>
+          <p class="mode-summary">
+            The ultimate cure for phones that lag or overheat during long Roblox gaming sessions.
+          </p>
+          <ul class="mode-features">
+            <li>✓ All Medium Mode optimizations included</li>
+            <li>✓ <strong>80% GPU Fillrate downscaling</strong> (slashes load by 36%)</li>
+            <li>✓ Keeps phone noticeably cooler while charging &amp; gaming</li>
+            <li>✓ 1-tap restore to default screen resolution anytime</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- iOS Autonomous Setup Section (Dedicated Guide) -->
+  <section class="ios-section" id="ios-guide">
+    <div class="section-container">
+      <div class="ios-feature-card glass-panel">
+        
+        <div class="ios-header-group">
+          <div class="ios-apple-badge">
+            <span class="apple-logo-icon"></span>
+            <span>APPLE iOS (iPHONE &amp; iPAD) GUIDE</span>
+          </div>
+          <h2>Why I Can't Give an APK on iOS — And How You Can Boost It Autonomously!</h2>
+          <p class="ios-intro">
+            A lot of you on iPhone and iPad ask: <em>"Kaiser, where is the iOS download?"</em> I want to be 100% honest with you so you know exactly why iOS is different and how to get maximum FPS on Apple devices on your own!
+          </p>
+        </div>
+
+        <!-- The Truth About Apple Sandbox -->
+        <div class="ios-truth-box">
+          <div class="truth-icon">⚠️</div>
+          <div class="truth-text">
+            <h4>Apple's Security Sandbox Disallows Direct APK / Sideloading</h4>
+            <p>
+              Unlike Android, Apple completely locks down iOS. You cannot download outside installer files (like <code>.apk</code>) without risky paid developer certificates or complex computer sideloaders. Furthermore, Apple strictly forbids background shell bridges like Shizuku.
+            </p>
+            <p>
+              <strong>The Good News:</strong> iPhones run on Apple Metal, which has the lowest graphics overhead in mobile gaming. Apple has built-in hardware settings that are <strong>even more powerful than Android tweaks</strong> when you know how to use them!
+            </p>
+          </div>
+        </div>
+
+        <!-- Autonomous Steps -->
+        <div class="ios-steps-container">
+          <h3 class="ios-steps-title">🚀 4 Steps to Boost Roblox on iPhone &amp; iPad Right Now:</h3>
+          
+          <div class="ios-steps-grid">
+            
+            <!-- Step 1: Install PWA -->
+            <div class="ios-step-card">
+              <div class="step-num">1</div>
+              <h4>Install KaiserFPS iOS App (10 Seconds)</h4>
+              <p>We built KaiserFPS iOS as a Progressive Web App (PWA) with tactile haptics and live upload notifications!</p>
+              <div class="safari-instruction">
+                <span>1. Open <a href="./ios/index.html" target="_blank" class="pwa-link">KaiserFPS iOS PWA</a> in <strong>Safari</strong>.</span><br>
+                <span>2. Tap the <strong>Share</strong> button <span class="share-icon">[↑]</span> at the bottom.</span><br>
+                <span>3. Tap <strong>"Add to Home Screen"</strong> &amp; hit <strong>Add</strong>!</span>
+              </div>
+              <a href="./ios/index.html" target="_blank" class="btn-ios-pwa">Launch iOS PWA App ➔</a>
+            </div>
+
+            <!-- Step 2: Guided Access Secret -->
+            <div class="ios-step-card">
+              <div class="step-num">2</div>
+              <h4>The Secret Weapon: Guided Access (100% Core Lock)</h4>
+              <p>
+                Normally, iOS reserves CPU cores for swipe gestures and notifications. Guided Access locks the phone to <strong>100% dedicated Roblox priority!</strong>
+              </p>
+              <div class="safari-instruction">
+                <span>1. Settings &gt; Accessibility &gt; <strong>Guided Access: ON</strong>.</span><br>
+                <span>2. Open Roblox and start your game.</span><br>
+                <span>3. <strong>Triple-click the Power / Side button</strong> &amp; tap <strong>Start</strong>.</span><br>
+                <span class="highlight-green">✓ Result: Zero swipe lag, zero notification drops!</span>
+              </div>
+            </div>
+
+            <!-- Step 3: 5-Second RAM Flush -->
+            <div class="ios-step-card">
+              <div class="step-num">3</div>
+              <h4>The 5-Second Hardware RAM Flush</h4>
+              <p>Purge 1.5GB to 3.0GB of frozen background app memory before opening Roblox:</p>
+              <div class="safari-instruction">
+                <span>1. Settings &gt; Accessibility &gt; Touch &gt; <strong>AssistiveTouch ON</strong>.</span><br>
+                <span>2. Press <strong>Volume Up</strong>, then <strong>Volume Down</strong>, then hold <strong>Power</strong> until "Slide to Power Off" appears.</span><br>
+                <span>3. Tap AssistiveTouch &gt; press &amp; hold on-screen <strong>Home</strong> for 5s until screen flashes!</span>
+              </div>
+            </div>
+
+            <!-- Step 4: Turn OFF Low Power Mode -->
+            <div class="ios-step-card">
+              <div class="step-num">4</div>
+              <h4>Turn OFF Low Power Mode</h4>
+              <p>
+                Apple's Low Power Mode intentionally slashes GPU clocks by <strong>50%</strong> and caps refresh rate to <strong>30 FPS</strong>. Ensure battery icon is <strong>White</strong>, not Yellow, before launching Roblox!
+              </p>
+              <a href="./downloads/kaiserFPS-iOS.zip" class="btn-ios-zip" download>
+                <span>📦 Download KaiserFPS iOS Package (.zip)</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Subscribe-to-Unlock Download Gateway -->
+  <section class="gateway-section" id="download-gate">
+    <div class="section-container">
+      
+      <div class="gateway-wrapper glass-panel">
+        
+        <div class="gateway-header">
+          <div class="lock-indicator" id="lockIndicator">
+            <span class="lock-icon" id="lockIcon">🔒</span>
+            <span class="lock-status" id="lockStatusText">DOWNLOAD LOCKED</span>
+          </div>
+          <h2>Subscribe &amp; Like to Unlock Download</h2>
+          <p class="gateway-subtitle">
+            To keep KaiserFPS 100% free with zero annoying ads, simply subscribe to my YouTube channel and like my latest long-form video. It takes 10 seconds and supports my work!
+          </p>
+        </div>
+
+        <!-- Dynamic Latest Video Showcase Card -->
+        <div class="latest-video-widget">
+          <div class="widget-badge">
+            <span class="live-dot"></span>
+            <span>CONNECTED YOUTUBE FEED (LONG-FORM ONLY)</span>
+          </div>
+          
+          <div class="video-preview-card" id="videoPreviewCard">
+            <div class="video-thumb-container">
+              <img src="https://i4.ytimg.com/vi/OUNl81bv4f0/hqdefault.jpg" alt="Latest Video Thumbnail" class="video-thumb-img" id="featuredVideoThumb">
+              <div class="play-overlay-icon">▶</div>
+            </div>
+            <div class="video-details">
+              <span class="video-channel-tag">@KaiserEverhart-Adaptation</span>
+              <h3 class="video-title-text" id="featuredVideoTitle">
+                Corax Is Finished... Why You Don't Need Rivals Cheats Anymore
+              </h3>
+              <p class="video-note">
+                ✨ Verified long-form video (Shorts automatically filtered out).
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2-Step Action Gateway -->
+        <div class="unlock-steps-grid">
+          
+          <!-- Step 1: Subscribe -->
+          <div class="unlock-step-box" id="stepSubBox">
+            <div class="step-badge">STEP 1</div>
+            <h4>Subscribe to Kaiser on YouTube</h4>
+            <p>Join the community and never miss a new FPS update or Roblox guide.</p>
+            <button class="btn-step-action" id="btnActionSubscribe">
+              <svg class="yt-icon" viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+              <span class="btn-label" id="lblSub">1. Subscribe on YouTube</span>
+            </button>
+          </div>
+
+          <!-- Step 2: Like Video -->
+          <div class="unlock-step-box" id="stepLikeBox">
+            <div class="step-badge">STEP 2</div>
+            <h4>Like the Latest Long-Form Video</h4>
+            <p>Leave a thumbs up on our latest upload to verify you're a real viewer.</p>
+            <button class="btn-step-action" id="btnActionLike">
+              <span class="like-thumb">👍</span>
+              <span class="btn-label" id="lblLike">2. Like Latest Video</span>
+            </button>
+          </div>
+
+        </div>
+
+        <!-- Unlocked Content Container (Hidden until unlocked) -->
+        <div class="unlocked-downloads-area" id="unlockedArea">
+          
+          <div class="unlocked-celebration-banner">
+            <span class="party-emoji">🎉</span>
+            <div class="banner-text">
+              <h3>ACCESS GRANTED! THANK YOU FOR SUPPORTING KAISER</h3>
+              <p>Choose your device below to download or launch KaiserFPS:</p>
+            </div>
+          </div>
+
+          <div class="download-cards-grid">
+            
+            <!-- Android Card -->
+            <div class="platform-dl-card android-card">
+              <div class="platform-header">
+                <span class="platform-icon">🤖</span>
+                <div class="platform-title-group">
+                  <h4>KaiserFPS for Android</h4>
+                  <span class="platform-meta">v3.0.0 • APK (16.8 MB) • Android 9–16</span>
+                </div>
+              </div>
+              <p class="platform-desc">
+                Universal package with built-in LOW (Instant), MEDIUM (Turbo), and HIGH (36% Fillrate Downscale) modes.
+              </p>
+              <div class="dl-actions">
+                <a href="./downloads/kaiserFPS.apk" download class="btn-download-primary" id="btnDownloadAndroid">
+                  <span>⬇️ Download kaiserFPS.apk (16.8 MB)</span>
+                </a>
+              </div>
+              <div class="quick-install-note">
+                <span>💡 <strong>Tip:</strong> Tap file to install &gt; Select LOW mode &gt; Hit circle button to play!</span>
+              </div>
+            </div>
+
+            <!-- iOS Card -->
+            <div class="platform-dl-card ios-card">
+              <div class="platform-header">
+                <span class="platform-icon"></span>
+                <div class="platform-title-group">
+                  <h4>KaiserFPS for Apple iOS</h4>
+                  <span class="platform-meta">PWA + Guided Access Suite • iPhone &amp; iPad</span>
+                </div>
+              </div>
+              <p class="platform-desc">
+                Install as a full-screen native app via Safari, or download the full zip package with guides and FFlags.
+              </p>
+              <div class="dl-actions-stacked">
+                <a href="./ios/index.html" target="_blank" class="btn-download-secondary" id="btnLaunchIosPwa">
+                  <span>📲 Launch KaiserFPS iOS (Add to Home Screen)</span>
+                </a>
+                <a href="./downloads/kaiserFPS-iOS.zip" download class="btn-download-tertiary" id="btnDownloadIosZip">
+                  <span>📦 Download kaiserFPS-iOS.zip (2.37 MB)</span>
+                </a>
+              </div>
+              <div class="quick-install-note">
+                <span>💡 <strong>Tip:</strong> Check our <a href="#ios-guide">iOS Guide above</a> for Guided Access 100% Core Lock!</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Safety & Anti-Ban FAQ -->
+  <section class="faq-section" id="faq">
+    <div class="section-container">
+      <div class="section-header">
+        <span class="section-tag">FREQUENTLY ASKED QUESTIONS</span>
+        <h2>Everything You Need to Know (Zero Fear)</h2>
+        <p class="section-desc">Clear answers to protect your device and eliminate any doubts.</p>
+      </div>
+
+      <div class="faq-accordion">
+        
+        <div class="faq-item glass-panel">
+          <button class="faq-question" aria-expanded="false">
+            <span>Can my Roblox account get banned for using KaiserFPS?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>100% NO.</strong> Roblox's Hyperion anti-cheat only monitors the memory and binary of the Roblox client itself. KaiserFPS <strong>never injects code, DLLs, or hooks into Roblox</strong>. It only adjusts operating-system level screen resolution, process priorities, and Wi-Fi latency sleep policies. It is completely safe.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is KaiserFPS a virus or malware? Why did someone call it that?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>Zero malware, zero viruses.</strong> In the cheating/gaming scene, competitors often try to scare people with false rumors. KaiserFPS is completely free, transparent, and built with clean open code. It has zero hidden miners, zero trackers, and zero network backdoors.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need Shizuku to use KaiserFPS on Android?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>No!</strong> LOW Mode is our Zero-Setup Instant Mode. It runs out of the box on ANY Android phone without Shizuku, without developer options, and without cables. Shizuku is only needed if you want the extra boost of MEDIUM or HIGH modes.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question" aria-expanded="false">
+            <span>Does KaiserFPS support Android 15 and 16?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              <strong>Yes!</strong> KaiserFPS is optimized for Android 9 through Android 15 and the new Android 16 developer preview. It works seamlessly across Samsung OneUI, Xiaomi HyperOS, OnePlus OxygenOS, and Google Pixel.
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question" aria-expanded="false">
+            <span>Why doesn't iOS support Shizuku or APK files?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Apple's iOS is a closed sandbox that disallows outside app installation without certificates and forbids shell processes. However, as explained in our <a href="#ios-guide">iOS Guide</a>, using Apple's built-in <strong>Guided Access</strong> and <strong>Hardware RAM Flush</strong> actually gives your iPhone or iPad 100% dedicated GPU priority!
+            </p>
+          </div>
+        </div>
+
+        <div class="faq-item glass-panel">
+          <button class="faq-question" aria-expanded="false">
+            <span>How do I uninstall or restore factory defaults?</span>
+            <span class="faq-arrow">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>
+              Simply tap the big circle button again inside the app to toggle it INACTIVE, or open Settings and tap <strong>"RESTORE STOCK DEFAULTS"</strong>. If you uninstall the app, your phone remains completely normal.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="footer-logo-row">
+          <img src="./assets/logo.png" alt="Kaiser Mascot" class="footer-logo">
+          <span class="footer-title">KaiserFPS Mobile Suite</span>
+        </div>
+        <p class="footer-bio">
+          Engineered with care and transparency by Kaiser Everhart for the Roblox gaming community.
+        </p>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Navigation</h4>
+        <ul>
+          <li><a href="#how-it-works">How It Works</a></li>
+          <li><a href="#modes">Kid Mode Guide</a></li>
+          <li><a href="#ios-guide">iOS Autonomous Setup</a></li>
+          <li><a href="#download-gate">Download APK</a></li>
+          <li><a href="#faq">Safety Guarantee</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-links-group">
+        <h4>Creator &amp; Community</h4>
+        <ul>
+          <li><a href="https://www.youtube.com/@KaiserEverhart-Adaptation" target="_blank" rel="noopener noreferrer">YouTube Channel</a></li>
+          <li><a href="https://www.youtube.com/@KaiserEverhart-Adaptation?sub_confirmation=1" target="_blank" rel="noopener noreferrer">Subscribe on YouTube</a></li>
+          <li><a href="./ios/index.html" target="_blank">Launch iOS PWA</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 Kaiser Everhart. All rights reserved. Not affiliated with or endorsed by Roblox Corporation or Apple Inc.</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="./kaiser-config.js"></script>
+  <script src="./app.js"></script>
+</body>
+</html>
